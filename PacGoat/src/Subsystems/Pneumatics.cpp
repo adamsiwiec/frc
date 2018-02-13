@@ -23,7 +23,6 @@ void Pneumatics::InitDefaultCommand() {}
  * it goes above and below maximum pressure.
  */
 void Pneumatics::Start(double yAxis) {
-	m_compressor.Start();
 	m_lift.Set(yAxis);
 	p_lift.Set(true);
 

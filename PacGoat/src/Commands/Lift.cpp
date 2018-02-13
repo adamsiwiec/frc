@@ -23,7 +23,7 @@ void Lift::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void Lift::Execute() {
 	auto& controller = Robot::oi.GetController();
-	Robot::pneumatics.Start(joystick.GetRawAxis(5));
+	Robot::pneumatics.Start(controller.GetRawAxis(5));
 
 
 

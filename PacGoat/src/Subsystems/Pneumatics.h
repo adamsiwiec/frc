@@ -32,7 +32,7 @@ public:
 	 * Start the compressor going. The compressor automatically starts and
 	 * stops as it goes above and below maximum pressure.
 	 */
-	void Start();
+	void Start(double yAxis);
 
 	/**
 	 * @return Whether or not the system is fully pressurized.

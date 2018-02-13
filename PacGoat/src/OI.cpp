@@ -14,8 +14,8 @@
 
 
 OI::OI() {
-	c_6.toggleWhenPressed(new Lift());
-	j_12.toggleWhenPressed(new DriveWithJoystick());
+	c_6.ToggleWhenPressed(new Lift());
+	j_12.ToggleWhenPressed(new DriveWithJoystick());
 
 
 	// SmartDashboard Buttons

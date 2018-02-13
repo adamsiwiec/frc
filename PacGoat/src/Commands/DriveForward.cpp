@@ -15,7 +15,7 @@
 void DriveForward::init(double maxSpeed) {
 	Requires(&Robot::drivetrain);
 	m_driveForwardSpeed = maxSpeed;
-	Timer time = new Timer();
+	frc::Timer* time = new Timer();
 }
 
 DriveForward::DriveForward() {
@@ -23,7 +23,7 @@ DriveForward::DriveForward() {
 }
 
 DriveForward::DriveForward(double maxSpeed) {
-	init(speed);
+	init(maxSpeed);
 }
 
 
@@ -35,14 +35,14 @@ void DriveForward::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DriveForward::Execute() {
 
-		time.Start();
+		//time.Start();
 		Robot::drivetrain.ArcadeDrive(m_driveForwardSpeed, m_driveForwardSpeed);
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool DriveForward::IsFinished() {
-	return time.Get() > 5;
+	return false;//time.Get() > 5;
 }
 
 // Called once after isFinished returns true

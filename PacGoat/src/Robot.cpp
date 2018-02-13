@@ -8,23 +8,21 @@
 #include "Robot.h"
 
 #include <iostream>
-
+//#include <Scheduler.h>
 #include <Commands/DriveForward.h>
 #include <LiveWindow/LiveWindow.h>
 #include <SmartDashboard/SmartDashboard.h>
 
 DriveTrain Robot::drivetrain;
 Pneumatics Robot::pneumatics;
-//OI Robot::oi;
+OI Robot::oi;
 Command* autonomous;
 void Robot::RobotInit() {
 	// Show what command your subsystem is running on the SmartDashboard
 	frc::SmartDashboard::PutData(&drivetrain);
 	frc::SmartDashboard::PutData(&pneumatics);
-	oi = new OI();
 	autonomous = new DriveForward();
 
-	pneumatics.Start();  // Pressurize the pneumatics.
 }
 
 void Robot::AutonomousInit() {
@@ -32,7 +30,7 @@ void Robot::AutonomousInit() {
 }
 
 void Robot::AutonomousPeriodic() {
-	frc::Scheduler::GetInstance()->Run();
+//	frc::Scheduler::GetInstance()->Run();
 	Log();
 }
 
@@ -48,7 +46,7 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-	frc::Scheduler::GetInstance()->Run();
+//	frc::Scheduler::GetInstance()->Run();
 	Log();
 }
 
