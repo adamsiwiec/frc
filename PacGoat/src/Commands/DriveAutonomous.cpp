@@ -5,15 +5,11 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#pragma once
+#include <Commands/DriveAutonomous.h>
+#include "../Robot.h"
+#include "DriveForward.h"
 
-#include <Commands/CommandGroup.h>
+DriveAutonomous::DriveAutonomous() {
 
-/**
- * Drive over the line and then shoot the ball. If the hot goal is not detected,
- * it will wait briefly.
- */
-class DriveAndShootAutonomous : public frc::CommandGroup {
-public:
-	DriveAndShootAutonomous();
-};
+	AddSequential(new DriveForward(0.3));
+}
