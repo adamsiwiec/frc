@@ -10,7 +10,6 @@
 #include <Buttons/JoystickButton.h>
 #include <Joystick.h>
 
-#include "Triggers/DoubleButton.h"
 
 class OI {
 public:
