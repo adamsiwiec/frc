@@ -15,7 +15,7 @@
 void DriveForward::init(double maxSpeed) {
 	Requires(&Robot::drivetrain);
 	m_driveForwardSpeed = maxSpeed;
-	time = new Timer();
+	Timer bob = new Timer();
 }
 
 DriveForward::DriveForward() {
