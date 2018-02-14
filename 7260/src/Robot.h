@@ -25,7 +25,7 @@ public:
 
 private:
 	frc::Command* m_autonomousCommand = nullptr;
-	DriveAndShootAutonomous m_driveAndShootAuto;
+	DriveAutonomous m_driveAndShootAuto;
 	DriveForward m_driveForwardAuto;
 	SendableChooser<frc::Command*> m_autoChooser;
 

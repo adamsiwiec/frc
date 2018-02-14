@@ -11,11 +11,13 @@
 #include <Timer.h>
 
 #include "../Robot.h"
+	frc::Timer stopWatch = new frc::Timer();
+
 
 void DriveForward::init(double maxSpeed) {
 	Requires(&Robot::drivetrain);
 	m_driveForwardSpeed = maxSpeed;
-	Timer bob = new Timer();
+
 }
 
 DriveForward::DriveForward() {
@@ -35,14 +37,14 @@ void DriveForward::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DriveForward::Execute() {
 
-		//time.Start();
+		stopWatch.Start();
 		Robot::drivetrain.ArcadeDrive(m_driveForwardSpeed, m_driveForwardSpeed);
 
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool DriveForward::IsFinished() {
-	return false;//time.Get() > 5;
+	return stopWatch.Get() > 5;
 }
 
 // Called once after isFinished returns true

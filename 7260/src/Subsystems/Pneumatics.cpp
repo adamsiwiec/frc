@@ -24,13 +24,15 @@ void Pneumatics::InitDefaultCommand() {}
  */
 void Pneumatics::Start(double yAxis) {
 	m_lift.Set(yAxis);
-	p_lift.Set(true);
+	p_lift.Set(frc::DoubleSolenoid::kForward);
 
 }
 
 void Pneumatics::Stop() {
 	m_lift.Set(0);
-	p_lift.Set(false);
+	p_lift.Set(frc::DoubleSolenoid::kReverse);
+	p_lift.Set(frc::DoubleSolenoid::kOff);
+
 }
 
 

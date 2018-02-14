@@ -11,6 +11,7 @@
 #include <Commands/Subsystem.h>
 #include <Compressor.h>
 #include <Solenoid.h>
+#include <DoubleSolenoid.h>
 #include <Spark.h>
 
 /**
@@ -40,7 +41,7 @@ public:
 	void Stop();
 
 private:
-	frc::Solenoid p_lift {1};
+	frc::DoubleSolenoid p_lift{1, 2};
 	frc::Spark m_lift{3};
 
 
